@@ -49,7 +49,7 @@ modules:
       - type: git
         url: https://git.magicalgirl.moe/bird/Kart-Public.git
         branch: birdhouse-build-master
-        commit: cc87fc6025b4daee361408fa17cc299486478208
+        commit: a4d112383706b2f9fb7cfaedc0c944d91b3eb41e
       - type: script
         commands:
           - export SRB2WADDIR=/app/extra
