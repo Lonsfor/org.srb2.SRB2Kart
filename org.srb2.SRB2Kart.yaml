@@ -47,9 +47,9 @@ modules:
       - install -D -m 644 -t $FLATPAK_DEST/share/metainfo $FLATPAK_ID.metainfo.xml
     sources:
       - type: git
-        url: https://github.com/STJr/Kart-Public
-        tag: v1.2
-        commit: f856f18233da492c9446f70a2856e2e178ddfd1a
+        url: https://git.magicalgirl.moe/bird/Kart-Public.git
+        branch: birdhouse-build-master
+        commit: d315fe107e7047d624b5120023414d97b1a73596
       - type: script
         commands:
           - export SRB2WADDIR=/app/extra
