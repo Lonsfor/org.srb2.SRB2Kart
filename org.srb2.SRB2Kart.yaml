@@ -49,7 +49,7 @@ modules:
       - type: git
         url: https://git.magicalgirl.moe/bird/Kart-Public.git
         branch: birdhouse-build-master
-        commit: d315fe107e7047d624b5120023414d97b1a73596
+        commit: cc87fc6025b4daee361408fa17cc299486478208
       - type: script
         commands:
           - export SRB2WADDIR=/app/extra
@@ -59,9 +59,6 @@ modules:
         path: org.srb2.SRB2Kart.desktop
       - type: file
         path: org.srb2.SRB2Kart.metainfo.xml
-      - type: patch
-        path: r_opengl.patch
-        strip-components: 0
 
   - name: srb2kart-assets
     buildsystem: simple
