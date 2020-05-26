@@ -9,5 +9,5 @@ to build and install have flatpak setup and run
 ```
 git clone --recursive https://github.com/Lonsfor/org.srb2.SRB2Kart.git -b birdhouse-build
 cd org.srb2.SRB2Kart
-flatpak-builder --user --install --force-clean build org.srb2.SRB2Kart.yaml
+flatpak-builder --user --install --default-branch=birdhouse --force-clean build org.srb2.SRB2Kart.yaml
 ```
