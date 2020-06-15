@@ -4,6 +4,13 @@ flatpak of the Birdhouse build which adds unlocked framerate among other things
 
 full feature list can be found [here](https://git.magicalgirl.moe/bird/Kart-Public/wikis/Current-Release)
 
+# install
+
+to install have flatpak setup and download from [latest release](https://github.com/Lonsfor/org.srb2.SRB2Kart/releases/latest)
+and run `flatpak install --user org.srb2.SRB2Kart-bird.flatpak`
+
+# build
+
 to build and install have flatpak setup and run
 
 ```
