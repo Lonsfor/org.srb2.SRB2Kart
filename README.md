@@ -7,13 +7,13 @@ full feature list can be found [here](https://git.magicalgirl.moe/bird/Kart-Publ
 # install
 
 to install have flatpak setup and download from [latest release](https://github.com/Lonsfor/org.srb2.SRB2Kart/releases/latest)
-and run 
+then run 
 
 `flatpak install --user org.srb2.SRB2Kart-bird.flatpak`
 
 # build
 
-to build and install have flatpak setup and run
+to build and install have flatpak setup then run
 
 ```
 git clone --recursive https://github.com/Lonsfor/org.srb2.SRB2Kart.git -b birdhouse-build
