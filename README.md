@@ -7,9 +7,11 @@ full feature list can be found [here](https://git.magicalgirl.moe/bird/Kart-Publ
 # install
 
 to install have flatpak setup and download from [latest release](https://github.com/Lonsfor/org.srb2.SRB2Kart/releases/latest)
-then run 
+then run
 
 `flatpak install --user org.srb2.SRB2Kart-bird.flatpak`
+
+your content folder will be in `~/.var/app/org.srb2.SRB2Kart/.srb2kart`
 
 # build
 
