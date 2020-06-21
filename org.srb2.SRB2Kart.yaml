@@ -55,7 +55,7 @@ modules:
     sources:
       - type: git
         url: https://git.magicalgirl.moe/bird/Kart-Public.git
-        commit: 3fd08e15517d08eae68e0fc071a4bdc102a41ba9
+        commit: 39e55450bc083226bc6b477cdb1ac9054206c2d6
       - type: script
         commands:
           - export SRB2WADDIR=/app/data
