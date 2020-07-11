@@ -48,7 +48,7 @@
     <binary>srb2kart</binary>
   </provides>
   <releases>
-    <release version="1.2-bird-39e55450" date="2020-06-21" />
+    <release version="1.2-bird-903ae72a" date="2020-07-11" />
     <release version="1.2-bird" date="2020-05-25" />
     <release version="1.2" date="2020-05-12" />
   </releases>
