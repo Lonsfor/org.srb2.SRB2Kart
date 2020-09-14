@@ -11,6 +11,7 @@ finish-args:
   - --socket=wayland
   - --device=all
   - --persist=.srb2kart
+  - --filesystem=xdg-run/app/com.discordapp.Discord:create
 
 cleanup:
   - /include
@@ -32,6 +33,28 @@ modules:
         url: https://bitbucket.org/mpyne/game-music-emu/downloads/game-music-emu-0.6.3.tar.xz
         sha256: aba34e53ef0ec6a34b58b84e28bf8cfbccee6585cebca25333604c35db3e051d
 
+  - name: rapidjson
+    buildsystem: cmake-ninja
+    config-opts:
+    - -DRAPIDJSON_BUILD_DOC=OFF
+    - -DRAPIDJSON_BUILD_EXAMPLES=OFF
+    - -DRAPIDJSON_BUILD_TESTS=OFF
+    - -DRAPIDJSON_BUILD_THIRDPARTY_GTEST=OFF
+    sources:
+      - type: git
+        url: https://github.com/Tencent/rapidjson.git
+        tag: v1.1.0
+
+  - name: discord-rpc
+    buildsystem: cmake-ninja
+    config-opts:
+      - -DBUILD_SHARED_LIBS=ON
+      - -DBUILD_EXAMPLES=OFF
+    sources:
+      - type: git
+        url: https://github.com/discord/discord-rpc.git
+        commit: e4c0c569eca9b888010ad904d3633e782f5cd680
+
   - name: p7zip
     make-args:
       - 7z
@@ -51,8 +74,8 @@ modules:
     sources:
       - type: file
         dest-filename: Installer.exe
-        url: https://github.com/STJr/Kart-Public/releases/download/v1.2/srb2kart-v12-Installer.exe
-        sha256: 57284de43a2889c0a60ce8fee77df22095fcd31beef6130cbeed1ead0bebbfec
+        url: https://github.com/STJr/Kart-Public/releases/download/v1.3/srb2kart-v13-Installer.exe
+        sha256: 95422bc16c58c50cdde8a5860e2d4238c1581f6c831a0e22fe40582b6cc8c2fd
 
   - name: srb2kart
     buildsystem: simple
@@ -68,7 +91,7 @@ modules:
           env:
             ARCH_MAKE_ARGS: 'LINUX64=1 X86_64=1'
     build-commands:
-      - make -C src -j $FLATPAK_BUILDER_N_JOBS NOUPX=1 SDL=1 $ARCH_MAKE_ARGS
+      - make -C src -j $FLATPAK_BUILDER_N_JOBS NOUPX=1 SDL=1 HAVE_DISCORDRPC=1 $ARCH_MAKE_ARGS
       - install -D -m 755 -t $FLATPAK_DEST/bin bin/Linux*/Release/lsdl2srb2kart
       - install -D -m 644 srb2.png $FLATPAK_DEST/share/icons/hicolor/256x256/apps/$FLATPAK_ID.png
       - install -D -m 755 srb2kart.sh $FLATPAK_DEST/bin/srb2kart
@@ -76,13 +99,10 @@ modules:
       - install -D -m 644 -t $FLATPAK_DEST/share/metainfo $FLATPAK_ID.metainfo.xml
     sources:
       - type: git
-        url: https://git.do.srb2.org/bird/Kart-Public.git
-        commit: 546804fb96b6da91acf9cc5e720ac252acb22242
-      - type: script
-        commands:
-          - export SRB2WADDIR=/app/data
-          - lsdl2srb2kart "$@"
-        dest-filename: srb2kart.sh
+        url: https://gitlab.com/himie/kart-public.git
+        commit: 457234149352ce0032919acc2908a58db41ae6aa
+      - type: file
+        path: srb2kart.sh
       - type: file
         path: org.srb2.SRB2Kart.desktop
       - type: file
