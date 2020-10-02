@@ -108,9 +108,15 @@ modules:
     sources:
       - type: git
         url: https://gitlab.com/himie/kart-public.git
-        commit: 457234149352ce0032919acc2908a58db41ae6aa
-      - type: file
-        path: srb2kart.sh
+        commit: 27b92d8878942a6e1639a7133e9cec948f3a7c8f
+      - type: script
+        commands:
+          - for i in {0..9}; do
+          - test -S $XDG_RUNTIME_DIR/discord-ipc-$i || ln -sf {app/com.discordapp.Discord,$XDG_RUNTIME_DIR}/discord-ipc-$i;
+          - done
+          - export SRB2WADDIR=/app/data
+          - lsdl2srb2kart "$@"
+        dest-filename: srb2kart.sh
       - type: file
         path: org.srb2.SRB2Kart.desktop
       - type: file

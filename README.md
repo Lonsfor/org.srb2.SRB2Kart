@@ -2,9 +2,9 @@
 
 flatpak of the Birdhouse build which adds unlocked framerate among other things
 
-full feature list can be found [here](https://git.do.srb2.org/bird/Kart-Public/wikis/Current-Release)
+full feature list can be found [here](https://mb.srb2.org/showthread.php?t=49381)
 
-its build with Discord Rich Precense, Discord does see the game but joining has not been tested.
+its build with Discord Rich Precense, ask to join is not tested.
 
 # install
 
