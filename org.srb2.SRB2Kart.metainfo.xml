@@ -48,7 +48,7 @@
     <binary>srb2kart</binary>
   </provides>
   <releases>
-    <release version="1.3-moe-782793b5" date="2020-10-08" />
+    <release version="1.3-moe-#42" date="2020-12-05" />
     <release version="1.3" date="2020-09-14" />
   </releases>
   <content_rating type="oars-1.1">

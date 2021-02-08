@@ -108,7 +108,7 @@ modules:
     sources:
       - type: git
         url: https://gitlab.com/himie/kart-public.git
-        commit: 782793b51b26d01f9be0cd3fee10da3a777b7c1a
+        commit: 0f39a03697dc56e61e2fe8cbbfd741f1b37575d0
       - type: script
         commands:
           - for i in {0..9}; do
